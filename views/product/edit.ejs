@@ -1,0 +1,9 @@
+<h1>Edit Product</h1>
+
+
+<form action="/product/<%=product._id%>?_method=PUT" method="POST">
+    <input type="text" name="product[name]" placeholder="Enter Product Name" value="<%=product.name%>" required>
+    <input type="number" name="product[mrp]"  placeholder="Enter Product MRP" value="<%=product.mrp%>" required>
+    <input type="text" name="product[description]" placeholder="Enter Product Description" value="<%=product.description%>">
+    <button>Add New Product</button>
+</form>

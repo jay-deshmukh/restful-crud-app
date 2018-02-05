@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products</title>
+    </head>
+<body>
+    <h1>All Products</h1>
+    <a href="/">HOME</a><br>
+    <a href="/product/new">ADD NEW</a> <br>
+    <table border=1 id="myTable">
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>MRP</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%products.forEach(function(product){ %>
+        <tr>
+            <td><%= product.name%></td>
+            <td><%= product.mrp%></td>
+            <td><%= product.description%></td>
+            <td><a href="/product/<%= product.id%>/edit">Edit</a></td>
+            <td>
+                <form action="/product/<%= product.id%>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
