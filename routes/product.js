@@ -47,7 +47,6 @@ router.put("/product/:id",function(req,res) {
         if (err) {
             console.log(err);
         } else {
-            console.log(updatedOrder);
             res.redirect("/product");
         }
     });
